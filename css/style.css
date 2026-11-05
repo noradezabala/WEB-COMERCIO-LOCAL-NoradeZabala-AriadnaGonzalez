@@ -63,7 +63,6 @@
 }
 
 @layer components {
-  /* Greca: SVG repetido en horizontal; el color viene de currentColor */
   .greca {
     position: relative;
   }
@@ -223,7 +222,6 @@
     --i: url("../img/hamburguesa.svg");
   }
 
-  /* Con el menú abierto la cabecera cambia de color para verse sobre el panel */
   .cabecera {
     color: var(--color-crema);
   }
@@ -244,7 +242,6 @@
   }
 }
 
-/* Animaciones propias */
 @keyframes entra {
   from {
     opacity: 0;

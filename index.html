@@ -8,19 +8,7 @@
       name="description"
       content="Catálogo de muebles y objetos únicos del sudeste asiático. Showroom de 250 m² en Aravaca, Madrid."
     />
-    <script>
-      // Aplica el modo guardado (o el del sistema) antes de pintar, para evitar parpadeos
-      (function () {
-        var t = localStorage.getItem("tema");
-        if (
-          t === "oscuro" ||
-          (!t && matchMedia("(prefers-color-scheme: dark)").matches)
-        )
-          document.documentElement.classList.add("dark");
-      })();
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -78,37 +66,17 @@
         <nav aria-label="Principal" class="hidden lg:block">
           <ul class="flex gap-9 font-titulo text-[15px] font-medium">
             <li>
-              <a href="#" class="enlace-nav" aria-current="page">Catálogo</a>
+              <a href="#" class="enlace-nav">Catálogo</a>
             </li>
             <li><a href="#" class="enlace-nav">Nosotros</a></li>
             <li><a href="#" class="enlace-nav">Experiencias</a></li>
             <li><a href="#" class="enlace-nav">Colaboradores</a></li>
             <li><a href="#contacto" class="enlace-nav">Contacto</a></li>
+            <li><a href="#contacto" class="enlace-nav">Favoritos </a></li>
           </ul>
         </nav>
 
         <div class="flex items-center gap-5 md:gap-7">
-          <a
-            href="#"
-            class="flex items-center gap-2 font-titulo text-[15px] font-medium hover:opacity-70 focus-visible:outline-2 focus-visible:outline-crema"
-          >
-            <svg
-              class="h-5 w-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path
-                d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8Z"
-              />
-            </svg>
-            <span class="sr-only md:not-sr-only"
-              >Favoritos (<span id="contador-fav">0</span>)</span
-            >
-          </a>
           <button
             type="button"
             id="btn-tema"

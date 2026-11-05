@@ -27,8 +27,6 @@ const PRODUCTOS = [
     nombre: "Busto Tailandesa",
     precio: 560.0,
     imagen: "img/Vical-Busto-Thailandesa1.webp ",
-    categoria: "decoracion",
-    edad: "actual",
     agotado: false,
     ...TEXTO_DEMO,
     descripcion: "Busto decorativo tallado a mano de origen tailandés.",
@@ -99,7 +97,7 @@ const PRODUCTOS = [
   },
   {
     id: 6,
-    nombre: "Pedestal en su acabado original",
+    nombre: "Pedestal chino",
     precio: 1894.0,
     imagen: "img/BD-00216B-630x473.webp",
     categoria: "mesas",

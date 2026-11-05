@@ -1,0 +1,75 @@
+/* ===== Pegar AL FINAL de css/style.css ===== */
+
+@layer components {
+  /* Casillas de los filtros: cuadradas, con relleno al marcarlas */
+  .casilla {
+    appearance: none;
+    flex: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  .casilla:checked {
+    background-color: currentColor;
+  }
+  .casilla:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+  .opcion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 0;
+    font-family: var(--font-titulo);
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .opcion:hover .opcion-texto {
+    text-decoration: underline;
+  }
+  .opcion-texto::before {
+    content: "· ";
+  }
+
+  /* Desplegable de filtros en móvil */
+  .filtros-fila .btn-guardar {
+    display: none;
+  }
+  .filtros-fila[data-abierto="true"] .btn-guardar {
+    display: inline-flex;
+  }
+  .filtros-fila .chevron {
+    transition: transform 0.2s;
+  }
+  .filtros-fila[data-abierto="true"] .chevron {
+    transform: rotate(180deg);
+  }
+}
+
+/* Animación de las tarjetas al cambiar de filtro */
+@keyframes tarjeta-entra {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@layer utilities {
+  .tarjeta-entra {
+    animation: tarjeta-entra 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta-entra {
+    animation: none !important;
+  }
+}

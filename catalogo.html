@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -139,6 +139,42 @@
     <main
       class="mx-auto w-full max-w-[1440px] px-6 pb-16 pt-4 md:px-12 lg:px-20 lg:pt-2"
     >
+      <!-- Pestañas superiores -->
+      <div
+        class="mb-8 flex items-center gap-4 font-titulo text-[16px] md:text-[18px]"
+      >
+        <button
+          type="button"
+          id="tab-todos"
+          class="font-medium underline underline-offset-8 cursor-pointer transition-opacity"
+          aria-selected="true"
+        >
+          Todos los productos
+        </button>
+        <span class="text-tinta/40 dark:text-crema/40" aria-hidden="true"
+          >|</span
+        >
+        <button
+          type="button"
+          id="tab-novedades"
+          class="font-medium text-tinta/50 hover:text-tinta dark:text-crema/50 dark:hover:text-crema cursor-pointer transition-colors"
+          aria-selected="false"
+        >
+          Novedades
+        </button>
+        <span class="text-tinta/40 dark:text-crema/40" aria-hidden="true"
+          >|</span
+        >
+        <button
+          type="button"
+          id="tab-favoritos"
+          class="font-medium text-tinta/50 hover:text-tinta dark:text-crema/50 dark:hover:text-crema cursor-pointer transition-colors"
+          aria-selected="false"
+        >
+          Tus Favoritos
+        </button>
+      </div>
+
       <h1
         class="font-titulo text-[13px] font-medium uppercase tracking-[0.14em] md:text-sm lg:sr-only"
       >
@@ -153,7 +189,7 @@
         >
           <div class="relative h-[52px] lg:h-auto">
             <div
-              class="absolute inset-x-0 top-0 z-20 rounded bg-rosa-grisaceo text-tinta dark:bg-pizarra dark:text-crema lg:static"
+              class="absolute inset-x-0 top-0 z-20 text-tinta dark:text-crema lg:static"
             >
               <div
                 id="filtros-fila"
@@ -388,20 +424,7 @@
           aria-label="Piezas"
           class="mt-6 border-t border-tinta/40 pt-5 dark:border-crema/40 lg:mt-0 lg:flex-1 lg:border-0 lg:pt-0"
         >
-          <div class="mb-6 font-titulo text-[13px] lg:mb-8 lg:text-[18px]">
-            <ul
-              id="filtros-activos"
-              aria-live="polite"
-              class="leading-snug"
-            ></ul>
-            <button
-              type="button"
-              data-limpiar
-              class="hidden mt-2 text-[12px] underline hover:no-underline"
-            >
-              Limpiar filtros
-            </button>
-          </div>
+          <!-- Se eliminó el texto redundante superior, dejando únicamente la lista de productos -->
           <ul
             id="lista-productos"
             class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-12"

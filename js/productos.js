@@ -26,10 +26,11 @@ const PRODUCTOS = [
     id: 1,
     nombre: "Busto Tailandesa",
     precio: 560.0,
-    imagen: "img/Vical-Busto-Thailandesa1.webp ",
+    imagen: "img/Vical-Busto-Thailandesa1.webp",
     categoria: "decoracion",
     edad: "actual",
     agotado: false,
+    novedad: true,
     ...TEXTO_DEMO,
   },
   {
@@ -40,6 +41,7 @@ const PRODUCTOS = [
     categoria: "decoracion",
     edad: "antique",
     agotado: false,
+    novedad: true,
     ...TEXTO_DEMO,
   },
   {
@@ -50,6 +52,7 @@ const PRODUCTOS = [
     categoria: "baúles",
     edad: "vintage",
     agotado: true,
+    novedad: false,
     ...TEXTO_DEMO,
   },
   {
@@ -60,6 +63,7 @@ const PRODUCTOS = [
     categoria: "decoracion",
     edad: "actual",
     agotado: false,
+    novedad: true,
     ...TEXTO_DEMO,
   },
   {
@@ -70,6 +74,7 @@ const PRODUCTOS = [
     categoria: "iluminacion",
     edad: "antique",
     agotado: true,
+    novedad: false,
     ...TEXTO_DEMO,
   },
   {
@@ -80,6 +85,7 @@ const PRODUCTOS = [
     categoria: "mesas",
     edad: "vintage",
     agotado: false,
+    novedad: false,
     ...TEXTO_DEMO,
   },
 ];

@@ -1,7 +1,6 @@
 /* ===== Pegar AL FINAL de css/style.css ===== */
 
 @layer components {
-  /* Casillas de los filtros: cuadradas, con relleno al marcarlas */
   .casilla {
     appearance: none;
     flex: none;
@@ -37,7 +36,6 @@
     content: "· ";
   }
 
-  /* Desplegable de filtros en móvil */
   .filtros-fila .btn-guardar {
     display: none;
   }
@@ -52,7 +50,6 @@
   }
 }
 
-/* Animación de las tarjetas al cambiar de filtro */
 @keyframes tarjeta-entra {
   from {
     opacity: 0;

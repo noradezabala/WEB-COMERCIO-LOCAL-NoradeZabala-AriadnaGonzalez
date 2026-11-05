@@ -1,11 +1,10 @@
-// Catálogo: pinta las tarjetas desde PRODUCTOS (productos.js) y aplica las pestañas y filtros de Figma.
+// Catálogo: pinta las tarjetas desde PRODUCTOS (productos.js) y aplica las pestañas y filtros.
 (() => {
   const lista = document.getElementById("lista-productos");
   const contenedor = document.getElementById("filtros");
   const fila = document.getElementById("filtros-fila");
   const btnToggle = document.getElementById("btn-filtros");
   const panel = document.getElementById("panel-filtros");
-  const resumen = document.getElementById("filtros-activos");
   const casillas = [...document.querySelectorAll(".casilla")];
   const botonesLimpiar = document.querySelectorAll("[data-limpiar]");
   const escritorio = window.matchMedia("(min-width: 1024px)");
@@ -19,16 +18,12 @@
   const iconoEstrellaRellena = `<svg viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path d="M12 3.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 17l-5.4 3 1.2-6L3.3 9.8l6.1-.7z" fill="currentColor" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>`;
 
   function crearTarjeta(p, i) {
-    const agotado = p.agotado
-      ? `<span class="absolute inset-x-0 bottom-0 grid h-1/2 place-items-center bg-crema/70 font-titulo text-[15px] uppercase tracking-wide text-tinta dark:bg-tinta/70 dark:text-crema">Agotado</span>`
-      : "";
     return `
         <li data-aos="fade-up" data-aos-delay="${(i % 3) * 100}" data-i="${i}" data-id="${p.id}">
           <article class="group mx-auto max-w-[420px] md:max-w-none">
-            <a href="pieza.html?id=${p.id}" class="block rounded" aria-label="Ver ${p.nombre}, ${precioTexto(p)}${p.agotado ? ", agotado" : ""}">
+            <a href="pieza.html?id=${p.id}" class="block rounded" aria-label="Ver ${p.nombre}, ${precioTexto(p)}">
               <div class="relative aspect-[5/4] overflow-hidden rounded bg-white lg:aspect-[4/3]">
                 <img src="${p.imagen}" alt="${p.nombre}" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                ${agotado}
               </div>
             </a>
             <div class="mt-3 flex items-start justify-between gap-3">
@@ -50,40 +45,23 @@
   lista.innerHTML = PRODUCTOS.map(crearTarjeta).join("");
   const tarjetas = [...lista.children];
 
-  // Interactividad visual de la estrella
+  // Interactividad visual de la estrella y actualización al marcar favoritos
   lista.addEventListener("click", (e) => {
     const btn = e.target.closest('button[data-accion="fav"]');
     if (!btn) return;
     const activo = btn.getAttribute("aria-pressed") === "true";
     btn.setAttribute("aria-pressed", String(!activo));
     btn.innerHTML = !activo ? iconoEstrellaRellena : iconoEstrellaVacia;
+
+    if (vistaActual === "favoritos") {
+      filtrar();
+    }
   });
 
   const marcados = (grupo) =>
     casillas
       .filter((c) => c.dataset.grupo === grupo && c.checked)
       .map((c) => c.value);
-
-  function pintarResumen(cats, edades) {
-    const nombres = [
-      ...cats.map((v) => CATEGORIAS[v]),
-      ...edades.map((v) => EDADES[v]),
-    ];
-    let tituloDefecto = "Todos los productos";
-    if (vistaActual === "novedades") tituloDefecto = "Novedades";
-    if (vistaActual === "favoritos") tituloDefecto = "Tus Favoritos";
-
-    resumen.replaceChildren(
-      ...(nombres.length ? nombres : [tituloDefecto]).map((n) => {
-        const li = document.createElement("li");
-        li.textContent = "· " + n;
-        return li;
-      }),
-    );
-    botonesLimpiar.forEach((b) =>
-      b.classList.toggle("hidden", !nombres.length),
-    );
-  }
 
   function reanimar() {
     tarjetas
@@ -123,7 +101,6 @@
       li.hidden = !(coincideVista && coincideFiltros);
     });
 
-    pintarResumen(cats, edades);
     reanimar();
     if (window.AOS) AOS.refresh();
   }
@@ -189,5 +166,5 @@
   });
   escritorio.addEventListener("change", () => abrirPanel(false));
 
-  pintarResumen([], []);
+  filtrar();
 })();

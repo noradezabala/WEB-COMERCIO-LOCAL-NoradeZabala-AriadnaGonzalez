@@ -1,0 +1,236 @@
+/* Capas propias: se declaran en el orden de Tailwind v4 para no pisar sus utilidades */
+@layer theme, base, components, utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+  em {
+    font-family: var(--font-texto);
+  }
+}
+
+@layer components {
+  /* Greca: SVG repetido en horizontal; el color viene de currentColor */
+  .greca {
+    position: relative;
+  }
+  .greca::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    -webkit-mask: url("../img/greca.svg") repeat-x left center / auto 100%;
+    mask: url("../img/greca.svg") repeat-x left center / auto 100%;
+    background-color: currentColor;
+  }
+
+  .logo {
+    -webkit-mask: url("img/Logo.svg") no-repeat center / contain;
+    mask: url("../img/Logo.svg") no-repeat center / contain;
+    background-color: currentColor;
+  }
+
+  .boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.625rem;
+    border-radius: 0.25rem;
+    font-family: var(--font-titulo);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      transform 0.2s;
+  }
+  .boton:active {
+    transform: translateY(1px);
+  }
+  .btn-borde {
+    border: 1px solid currentColor;
+    color: var(--color-verde-oscuro);
+  }
+  .btn-borde:hover {
+    background: var(--color-verde-oscuro);
+    color: var(--color-verde-oliva);
+  }
+  :where(.dark) .btn-borde {
+    color: var(--color-crema);
+  }
+  :where(.dark) .btn-borde:hover {
+    background: var(--color-crema);
+    color: var(--color-verde-oscuro);
+  }
+
+  .enlace-nav {
+    position: relative;
+    padding-bottom: 6px;
+  }
+  .enlace-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s;
+  }
+  .enlace-nav:hover::after,
+  .enlace-nav[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+
+  .fila-dato {
+    border-top: 1px solid color-mix(in srgb, var(--color-hoja) 50%, transparent);
+    padding: 1rem 0;
+  }
+  :where(.dark) .fila-dato {
+    border-color: color-mix(in srgb, var(--color-crema) 20%, transparent);
+  }
+  .fila-dato dt {
+    font-family: var(--font-titulo);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-hoja);
+    margin-bottom: 0.5rem;
+  }
+  :where(.dark) .fila-dato dt {
+    color: var(--color-verde-oliva);
+  }
+  .fila-dato strong {
+    font-weight: 700;
+  }
+  @media (min-width: 768px) {
+    .fila-dato {
+      display: grid;
+      grid-template-columns: 10rem 1fr;
+    }
+    .fila-dato dt {
+      margin: 0.3rem 0 0;
+    }
+  }
+
+  .titulo-col {
+    font-family: var(--font-titulo);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-marron);
+  }
+  :where(.dark) .titulo-col {
+    color: var(--color-verde-oliva);
+  }
+  .lista-col {
+    margin-top: 0.75rem;
+    display: grid;
+    gap: 0.25rem;
+    font-size: 18px;
+    color: var(--color-tinta);
+  }
+  :where(.dark) .lista-col {
+    color: color-mix(in srgb, var(--color-crema) 85%, transparent);
+  }
+  .lista-col a:hover {
+    text-decoration: underline;
+  }
+
+  .menu-movil {
+    display: none;
+  }
+  .menu-movil.abierto {
+    display: flex;
+  }
+
+  /* Iconos: SVG propios de /img usados como máscara, para que cojan el color del texto */
+  .icono {
+    display: inline-block;
+    flex: none;
+    background-color: currentColor;
+    -webkit-mask: var(--i) no-repeat center / contain;
+    mask: var(--i) no-repeat center / contain;
+  }
+  .ico-luna {
+    --i: url("../img/luna.svg");
+  }
+  .ico-sol {
+    --i: url("../img/sol.svg");
+  }
+  .ico-flecha {
+    --i: url("../img/flecha.svg");
+  }
+  .ico-hamburguesa {
+    --i: url("../img/hamburguesa.svg");
+  }
+
+  /* Con el menú abierto la cabecera cambia de color para verse sobre el panel */
+  .cabecera {
+    color: var(--color-crema);
+  }
+  body.menu-abierto .cabecera {
+    color: var(--color-tinta);
+  }
+  html.dark body.menu-abierto .cabecera {
+    color: var(--color-crema);
+  }
+  .x-cerrar {
+    display: none;
+  }
+  .btn-menu[aria-expanded="true"] .ico-hamburguesa {
+    display: none;
+  }
+  .btn-menu[aria-expanded="true"] .x-cerrar {
+    display: block;
+  }
+}
+
+/* Animaciones propias */
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes giro {
+  from {
+    transform: rotate(-90deg) scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@layer utilities {
+  .hero-entra {
+    animation: entra 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .giro .icono:not(.hidden) {
+    animation: giro 0.4s ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-entra,
+  .giro .icono {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

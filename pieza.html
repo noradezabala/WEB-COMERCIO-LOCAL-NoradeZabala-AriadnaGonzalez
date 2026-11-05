@@ -1,23 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pieza · Bidadari</title>
+    <title>Pieza | Bidadari</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <meta
       name="description"
       content="Ficha de una pieza única del catálogo de Bidadari."
     />
-    <script>
-      try {
-        var t = localStorage.getItem("tema");
-        if (
-          t === "oscuro" ||
-          (!t && matchMedia("(prefers-color-scheme: dark)").matches)
-        )
-          document.documentElement.classList.add("dark");
-      } catch (e) {}
-    </script>
+
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -160,13 +152,6 @@
         </div>
 
         <div class="mt-8 lg:mt-0">
-          <p
-            id="pieza-agotado"
-            hidden
-            class="mb-3 inline-block rounded-full border border-current px-3 py-1 font-titulo text-[11px] uppercase tracking-wide"
-          >
-            Agotado
-          </p>
           <h1
             id="pieza-nombre"
             class="font-titulo text-[32px]/[38px] font-medium tracking-tight md:text-[44px]/[52px]"

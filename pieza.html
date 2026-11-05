@@ -196,15 +196,21 @@
             </div>
           </dl>
 
-          <h2
-            class="mt-8 font-titulo text-[13px] font-medium uppercase tracking-[0.14em]"
-          >
-            Su historia
-          </h2>
-          <p
-            id="pieza-historia"
-            class="mt-3 max-w-[560px] text-[19px]/[27px]"
-          ></p>
+          <details class="group mt-8 cursor-pointer">
+            <summary
+              class="font-titulo text-[13px] font-medium uppercase tracking-[0.14em] list-none flex items-center justify-between"
+            >
+              <span>Su historia</span>
+              <span
+                class="transition-transform duration-300 group-open:rotate-180"
+                >▼</span
+              >
+            </summary>
+            <p
+              id="pieza-historia"
+              class="mt-3 max-w-[560px] text-[19px]/[27px]"
+            ></p>
+          </details>
 
           <div id="pieza-cta" class="mt-8">
             <p class="max-w-[560px] text-lg/[26px]">

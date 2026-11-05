@@ -1,9 +1,326 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bidadari - Inicio</title>
+    <title>
+      Bidadari | Piezas únicas del sudeste asiático con historia propia
+    </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS v4 Play CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- AOS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+
+    <!-- Hoja de estilos propia -->
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- ================= 1. CABECERA Y NAVEGACIÓN ================= -->
+    <header>
+      <div>
+        <a href="#">Bidadari</a>
+
+        <div>
+          <!-- Botón Modo Oscuro / Claro -->
+          <button id="boton-tema" aria-label="Cambiar modo de color">
+            <svg
+              id="icono-sol"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              ></path>
+            </svg>
+            <svg
+              id="icono-luna"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Botón Menú Móvil -->
+          <button id="boton-menu" aria-label="Abrir menú de navegación">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Menú Desktop -->
+        <nav>
+          <a href="#catalogo">Catálogo</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+
+      <!-- Menú Desplegable Móvil -->
+      <nav id="menu-movil">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ================= 2. HERO / PORTADA ================= -->
+      <section>
+        <div data-aos="fade-up">
+          <p>SHOWROOM EN ARAVACA · MADRID</p>
+          <!--[cite: 1] -->
+          <h1>
+            Piezas <em>únicas</em> del sudeste asiático, con
+            <em>historia propia</em>.
+            <!--[cite: 1] -->
+          </h1>
+          <p>
+            Explora el catálogo desde casa. Para llevarte una pieza, ven a verla
+            a nuestro showroom de 250 m² en Aravaca.
+            <!--[cite: 1] -->
+          </p>
+          <a href="#catalogo">
+            Explorar nuestro catálogo <span>→</span>
+            <!--[cite: 1] -->
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= 3. SOBRE BIDADARI ================= -->
+      <section id="nosotros" data-aos="fade-up">
+        <div>
+          <h2>SOBRE BIDADARI</h2>
+          <!--[cite: 1] -->
+          <p>
+            Bidadari es una antigua palabra malaya que significa ángel: la
+            energía que nos acompaña, nos protege y nos impulsa hacia adelante.
+            <!--[cite: 1] -->
+          </p>
+          <a href="#">Conoce nuestra historia →</a>
+          <!--[cite: 1] -->
+        </div>
+      </section>
+
+      <!-- ================= 4. ¿CÓMO FUNCIONA BIDADARI? ================= -->
+      <section id="como-funciona">
+        <div data-aos="fade-up">
+          <h2>¿CÓMO FUNCIONA BIDADARI?</h2>
+          <!--[cite: 1] -->
+          <p>Ojea desde casa, llévatela en persona.</p>
+          <!--[cite: 1] -->
+        </div>
+
+        <div>
+          <!-- Paso 01 -->
+          <article data-aos="fade-up" data-aos-delay="100">
+            <span>01</span>
+            <!--[cite: 1] -->
+            <h3>Explora el catálogo</h3>
+            <!--[cite: 1] -->
+            <p>
+              Fotos, medidas, materiales y la historia de cada pieza, todo
+              consultable desde casa. Guarda tus favoritas para recordarlas.
+            </p>
+            <!--[cite: 1] -->
+          </article>
+
+          <!-- Paso 02 -->
+          <article data-aos="fade-up" data-aos-delay="200">
+            <span>02</span>
+            <!--[cite: 1] -->
+            <h3>Piezas Únicas</h3>
+            <!--[cite: 1] -->
+            <p>
+              Cada mueble existe una única vez. Cuando alguien se lo lleva,
+              desaparece del catálogo: no hay stock ni segunda tirada.
+            </p>
+            <!--[cite: 1] -->
+          </article>
+
+          <!-- Paso 03 -->
+          <article data-aos="fade-up" data-aos-delay="300">
+            <span>03</span>
+            <!--[cite: 1] -->
+            <h3>Ven a verlas</h3>
+            <!--[cite: 1] -->
+            <p>
+              No vendemos online. Las piezas se compran en el showroom de
+              Aravaca, donde puedes tocarlas y verlas a tamaño real.
+            </p>
+            <!--[cite: 1] -->
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= 5. VISITANOS (CONTACTO Y MAPA) ================= -->
+      <section id="contacto">
+        <div>
+          <!-- Datos de Visita -->
+          <div data-aos="fade-right">
+            <h2>VISITANOS</h2>
+            <!--[cite: 1] -->
+            <h3>Las piezas se aprecian mejor en persona</h3>
+            <!--[cite: 1] -->
+            <p>
+              Nuestro showroom de 250 m² en el Soho de Aravaca es el único lugar
+              donde puedes comprar. Guarda tus favoritas en el catálogo y
+              enséñanoslas cuando vengas.
+            </p>
+            <!--[cite: 1] -->
+
+            <div>
+              <div>
+                <h4>DIRECCIÓN</h4>
+                <!--[cite: 1] -->
+                <p>Avenida de la Galaxia, 21<br />28023 Aravaca, Madrid</p>
+                <!--[cite: 1] -->
+              </div>
+              <div>
+                <h4>HORARIO</h4>
+                <!--[cite: 1] -->
+                <p>
+                  Lunes-Jueves 10am-4:30pm<br />
+                  <!--[cite: 1] -->
+                  Viernes 10am-2pm 4pm-8pm<br />
+                  <!--[cite: 1] -->
+                  Sábado 10am-2pm<br />
+                  <!--[cite: 1] -->
+                  Domingo cerrado
+                  <!--[cite: 1] -->
+                </p>
+              </div>
+              <div>
+                <h4>CONTACTO</h4>
+                <!--[cite: 1] -->
+                <p>+34 613 941 396<br />tienda@bidadari.es</p>
+                <!--[cite: 1] -->
+              </div>
+            </div>
+
+            <!-- Botones de Acción Interactivos -->
+            <div>
+              <a href="tel:+34613941396">Llamar</a>
+              <!--[cite: 1] -->
+              <a href="https://wa.me/34613941396" target="_blank"
+                >Escribir por WhatsApp</a
+              >
+              <!--[cite: 1] -->
+              <a href="mailto:tienda@bidadari.es">Escribir un correo</a>
+              <!--[cite: 1] -->
+              <a
+                href="https://maps.google.com/?q=Avenida+de+la+Galaxia+21+Aravaca+Madrid"
+                target="_blank"
+                >Ver ruta en Google Maps</a
+              >
+              <!--[cite: 1] -->
+            </div>
+          </div>
+
+          <!-- Mapa Satelital -->
+          <div data-aos="fade-left">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.03681402283!2d-3.7844!3d40.4578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4188fa6c04fdfb%3A0x1d4715b0ef0bb60!2sAv.%20de%20la%20Galaxia%2C%2021%2C%20Moncloa%20-%20Aravaca%2C%2028023%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= 6. FOOTER ================= -->
+    <footer>
+      <div>
+        <div>
+          <span>Bidadari</span>
+          <!--[cite: 1] -->
+          <p>Piezas únicas con historia del sudeste asiático.</p>
+          <!--[cite: 1] -->
+        </div>
+
+        <!-- Enlaces de Exploración y Showroom -->
+        <div>
+          <div>
+            <h4>EXPLORAR</h4>
+            <!--[cite: 1] -->
+            <ul>
+              <li><a href="#catalogo">Catálogo</a></li>
+              <!--[cite: 1] -->
+              <li><a href="#nosotros">Nosotros</a></li>
+              <!--[cite: 1] -->
+              <li><a href="#">Experiencias</a></li>
+              <!--[cite: 1] -->
+              <li><a href="#contacto">Contacto</a></li>
+              <!--[cite: 1] -->
+              <li><a href="#">Colaboradores</a></li>
+              <!--[cite: 1] -->
+              <li><a href="#contacto">Cómo llegar</a></li>
+              <!--[cite: 1] -->
+            </ul>
+          </div>
+          <div>
+            <h4>SHOWROOM</h4>
+            <!--[cite: 1] -->
+            <p>
+              Av. de la Galaxia, 21<br />Aravaca, Madrid<br />tienda@bidadari.es
+            </p>
+            <!--[cite: 1] -->
+          </div>
+        </div>
+
+        <!-- Legal y Copyright -->
+        <div>
+          <div>
+            <a href="#">Aviso legal</a>
+            <!--[cite: 1] -->
+            <a href="#">Política de privacidad</a>
+            <!--[cite: 1] -->
+            <a href="#">Politica de cookies</a>
+            <!--[cite: 1] -->
+          </div>
+          <p>© 2026 Bidadari</p>
+          <!--[cite: 1] -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/interfaz.js"></script>
+    <script src="js/librerias.js"></script>
+  </body>
 </html>

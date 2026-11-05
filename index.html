@@ -1,9 +1,476 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bidadari - Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bidadari · Piezas únicas del sudeste asiático en Madrid</title>
+    <meta
+      name="description"
+      content="Catálogo de muebles y objetos únicos del sudeste asiático. Showroom de 250 m² en Aravaca, Madrid."
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+      @theme {
+        --color-crema: #f3eee4;
+        --color-crema-oscuro: #e9e1d3;
+        --color-tinta: #2f2d1f;
+        --color-marron: #653a12;
+        --color-verde-oscuro: #49481c;
+        --color-verde-oliva: #c6bf86;
+        --color-rosa-grisaceo: #c8c1aa;
+        --color-hoja: #5e7a3a;
+        --color-pizarra: #3b4c4d;
+        --color-celeste: #c6d8d3;
+        --font-titulo: "Syne", sans-serif;
+        --font-texto: "EB Garamond", Georgia, serif;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body
+    class="bg-crema font-texto text-tinta antialiased dark:bg-tinta dark:text-crema"
+  >
+    <div
+      class="relative flex min-h-[700px] flex-col bg-tinta text-crema md:min-h-[640px] lg:min-h-[800px]"
+    >
+      <img
+        src="img/foto-biombo.png"
+        alt="Biombo antiguo lacado en negro con paneles pintados, en un salón luminoso"
+        class="absolute inset-0 h-full w-full object-cover object-[62%_center]"
+        fetchpriority="high"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-tinta/90 via-tinta/0 via-45% to-transparent"
+      ></div>
+      <div
+        class="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-tinta/60 to-transparent"
+      ></div>
+
+      <header
+        class="cabecera relative z-50 mx-auto flex h-[72px] w-full max-w-[1440px] items-center justify-between px-6 md:h-[88px] md:px-12 lg:h-[120px] lg:px-20"
+      >
+        <a
+          href="index.html"
+          aria-label="Bidadari, inicio"
+          class="logo block aspect-[3/1] w-28 md:w-[140px] lg:w-[150px]"
+        ></a>
+
+        <nav aria-label="Principal" class="hidden lg:block">
+          <ul class="flex gap-9 font-titulo text-[15px] font-medium">
+            <li>
+              <a href="#" class="enlace-nav">Catálogo</a>
+            </li>
+            <li><a href="#" class="enlace-nav">Nosotros</a></li>
+            <li><a href="#" class="enlace-nav">Experiencias</a></li>
+            <li><a href="#" class="enlace-nav">Colaboradores</a></li>
+            <li><a href="#contacto" class="enlace-nav">Contacto</a></li>
+            <li><a href="#contacto" class="enlace-nav">Favoritos </a></li>
+          </ul>
+        </nav>
+
+        <div class="flex items-center gap-5 md:gap-7">
+          <button
+            type="button"
+            id="btn-tema"
+            class="grid h-6 w-6 place-items-center hover:opacity-70 focus-visible:outline-2 focus-visible:outline-crema"
+            aria-label="Cambiar entre modo claro y oscuro"
+          >
+            <span
+              class="icono ico-luna h-6 w-6 dark:hidden"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="icono ico-sol hidden h-6 w-6 dark:inline-block"
+              aria-hidden="true"
+            ></span>
+          </button>
+          <button
+            type="button"
+            id="btn-menu"
+            class="btn-menu grid h-6 w-6 place-items-center hover:opacity-70 focus-visible:outline-2 focus-visible:outline-crema lg:hidden"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="menu-movil"
+          >
+            <span
+              class="icono ico-hamburguesa h-6 w-6"
+              aria-hidden="true"
+            ></span>
+            <svg
+              class="x-cerrar h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M4 4l16 16M20 4 4 20" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div
+        id="menu-movil"
+        class="menu-movil fixed inset-0 z-40 flex-col bg-crema px-6 pt-24 text-tinta md:px-12 dark:bg-tinta dark:text-crema lg:hidden"
+        role="dialog"
+        aria-label="Menú"
+      >
+        <nav aria-label="Menú móvil">
+          <ul class="font-titulo text-[28px] font-medium">
+            <li class="border-b border-tinta/15 dark:border-crema/15">
+              <a href="#" class="block py-5 hover:italic">Catálogo</a>
+            </li>
+            <li class="border-b border-tinta/15 dark:border-crema/15">
+              <a href="#" class="block py-5">Nosotros</a>
+            </li>
+            <li class="border-b border-tinta/15 dark:border-crema/15">
+              <a href="#" class="block py-5">Experiencias</a>
+            </li>
+            <li class="border-b border-tinta/15 dark:border-crema/15">
+              <a href="#" class="block py-5">Colaboradores</a>
+            </li>
+            <li class="border-b border-tinta/15 dark:border-crema/15">
+              <a href="#contacto" class="block py-5">Contacto</a>
+            </li>
+            <li class="border-b border-tinta/15 dark:border-crema/15">
+              <a href="#contacto" class="block py-5">Favoritos</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <main
+        id="inicio"
+        class="relative z-10 mx-auto mt-auto w-full max-w-[1440px] px-6 pb-10 md:px-12 md:pb-14 lg:px-20 lg:pb-[84px]"
+      >
+        <div class="hero-entra max-w-[640px] lg:max-w-[1000px]">
+          <p
+            class="font-titulo text-xs font-medium uppercase tracking-[0.14em] md:text-[13px]"
+          >
+            Showroom en Aravaca · Madrid
+          </p>
+          <h1
+            class="mt-4 font-titulo text-4xl/[42px] font-medium tracking-tight md:text-[54px]/[62px] lg:text-[62px]/[72px]"
+          >
+            Piezas
+            <em class="font-texto text-[1.06em] font-medium">únicas</em> del
+            sudeste asiático, con
+            <em class="font-texto text-[1.06em] font-medium">historia</em>
+            propia.
+          </h1>
+          <p
+            class="mt-5 max-w-[560px] text-[19px]/[27px] md:text-[22px]/[31px] lg:max-w-[620px]"
+          >
+            Explora el catálogo desde casa. Para llevarte una pieza, ven a verla
+            a nuestro showroom de 250 m² en Aravaca.
+          </p>
+          <a
+            href="#"
+            class="boton mt-6 w-full bg-crema text-tinta hover:bg-crema-oscuro md:w-auto dark:border dark:border-crema dark:bg-tinta dark:text-crema dark:hover:bg-crema dark:hover:text-tinta"
+          >
+            Explorar nuestro catálogo
+            <span class="icono ico-flecha h-4 w-4" aria-hidden="true"></span>
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <div
+      class="greca h-9 bg-crema-oscuro text-marron md:h-11 lg:h-[58px]"
+      role="presentation"
+    ></div>
+
+    <section
+      data-aos="fade-up"
+      aria-labelledby="t-sobre"
+      class="bg-crema px-6 py-14 text-center text-tinta md:px-12 md:py-20 dark:bg-tinta dark:text-crema"
+    >
+      <h2
+        id="t-sobre"
+        class="font-titulo text-[13px] font-medium uppercase tracking-[0.14em] md:text-sm lg:text-2xl"
+      >
+        Sobre Bidadari
+      </h2>
+      <p
+        class="mx-auto mt-6 max-w-[900px] text-[26px]/[36px] md:text-[33px]/[44px] lg:text-[35px]"
+      >
+        <em>Bidadari</em> es una antigua palabra malaya que significa
+        <em>ángel</em>: la energía que nos acompaña, nos protege y nos impulsa
+        hacia adelante.
+      </p>
+      <a
+        href="#"
+        class="boton mt-7 border border-tinta/40 text-marron hover:bg-marron hover:text-crema dark:border-crema/40 dark:text-crema/80 dark:hover:bg-crema dark:hover:text-tinta"
+      >
+        Conoce nuestra historia
+        <span class="icono ico-flecha h-4 w-4" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <div
+      class="greca h-9 bg-crema-oscuro text-marron md:h-11 lg:h-[58px]"
+      role="presentation"
+    ></div>
+
+    <section
+      aria-labelledby="t-como"
+      class="bg-rosa-grisaceo px-6 py-14 md:px-12 md:py-20 dark:bg-pizarra"
+    >
+      <div data-aos="fade-up" class="mx-auto max-w-[1280px]">
+        <h2
+          id="t-como"
+          class="text-center font-titulo text-[13px] font-medium uppercase tracking-[0.14em] text-marron md:text-sm lg:text-2xl dark:text-celeste"
+        >
+          ¿Cómo funciona Bidadari?
+        </h2>
+        <p
+          class="mt-4 text-center font-titulo text-[28px]/[34px] font-medium tracking-tight text-tinta md:text-4xl/[44px] dark:text-rosa-grisaceo"
+        >
+          Ojea desde casa, <em class="font-texto">llévatela</em> en persona.
+        </p>
+
+        <ol class="mt-10 md:mt-12 md:grid md:grid-cols-3">
+          <li
+            class="flex gap-4 border-t border-tinta/50 py-8 first:border-t-0 first:pt-0 md:flex-col md:gap-2 md:border-l md:border-t-0 md:py-0 md:pl-10 md:first:border-l-0 md:first:pl-0 dark:border-rosa-grisaceo/50"
+            data-aos="fade-up"
+          >
+            <span
+              class="font-texto text-[46px] italic leading-none text-tinta md:text-5xl dark:text-rosa-grisaceo"
+              aria-hidden="true"
+              >01</span
+            >
+            <div class="text-marron dark:text-celeste">
+              <h3 class="font-titulo text-xl font-medium md:mt-6">
+                Explora el catálogo
+              </h3>
+              <p class="mt-2 text-[17px]/[25px]">
+                Fotos, medidas, materiales y la historia de cada pieza, todo
+                consultable desde casa. Guarda tus favoritas para recordarlas.
+              </p>
+            </div>
+          </li>
+          <li
+            class="flex gap-4 border-t border-tinta/50 py-8 md:flex-col md:gap-2 md:border-l md:border-t-0 md:py-0 md:pl-10 dark:border-rosa-grisaceo/50"
+            data-aos="fade-up"
+            data-aos-delay="120"
+          >
+            <span
+              class="font-texto text-[46px] italic leading-none text-tinta md:text-5xl dark:text-rosa-grisaceo"
+              aria-hidden="true"
+              >02</span
+            >
+            <div class="text-marron dark:text-celeste">
+              <h3 class="font-titulo text-xl font-medium md:mt-6">
+                Piezas Únicas
+              </h3>
+              <p class="mt-2 text-[17px]/[25px]">
+                Cada mueble existe una única vez. Cuando alguien se lo lleva,
+                desaparece del catálogo: no hay stock ni segunda tirada.
+              </p>
+            </div>
+          </li>
+          <li
+            class="flex gap-4 border-t border-tinta/50 py-8 pb-0 md:flex-col md:gap-2 md:border-l md:border-t-0 md:py-0 md:pl-10 dark:border-rosa-grisaceo/50"
+            data-aos="fade-up"
+            data-aos-delay="240"
+          >
+            <span
+              class="font-texto text-[46px] italic leading-none text-tinta md:text-5xl dark:text-rosa-grisaceo"
+              aria-hidden="true"
+              >03</span
+            >
+            <div class="text-marron dark:text-celeste">
+              <h3 class="font-titulo text-xl font-medium md:mt-6">
+                Ven a verlas
+              </h3>
+              <p class="mt-2 text-[17px]/[25px]">
+                No vendemos online. Las piezas se compran en el showroom de
+                Aravaca, donde puedes tocarlas y verlas a tamaño real.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section
+      id="contacto"
+      aria-labelledby="t-visita"
+      class="bg-verde-oliva px-6 py-14 md:px-12 md:py-20 lg:px-20 dark:bg-verde-oscuro"
+    >
+      <div class="mx-auto max-w-[1280px] lg:grid lg:grid-cols-2 lg:gap-20">
+        <div data-aos="fade-right">
+          <p
+            class="font-titulo text-xs font-medium uppercase tracking-[0.14em] text-hoja dark:text-verde-oliva"
+          >
+            Visítanos
+          </p>
+          <h2
+            id="t-visita"
+            class="mt-3 max-w-[560px] font-titulo text-[32px]/[38px] font-medium tracking-tight text-verde-oscuro md:text-[44px]/[52px] dark:text-crema"
+          >
+            Las piezas se
+            <em class="font-texto text-[1.06em] font-medium">aprecian</em> mejor
+            en persona
+          </h2>
+          <p
+            class="mt-5 max-w-[600px] text-lg/[26px] text-hoja md:text-xl/[29px] dark:text-crema/90"
+          >
+            Nuestro showroom de 250 m² en el Soho de Aravaca es el único lugar
+            donde puedes comprar. Guarda tus favoritas en el catálogo y
+            enséñanoslas cuando vengas.
+          </p>
+
+          <dl class="mt-8 text-xl/[27px] text-verde-oscuro dark:text-crema">
+            <div class="fila-dato">
+              <dt>Dirección</dt>
+              <dd>
+                <address class="not-italic">
+                  Avenida de la Galaxia, 21<br />28023 Aravaca, Madrid
+                </address>
+              </dd>
+            </div>
+            <div class="fila-dato">
+              <dt>Horario</dt>
+              <dd>
+                <p><strong>Lunes – Jueves</strong>&ensp;10am – 4:30pm</p>
+                <p><strong>Viernes</strong>&ensp;10am – 2pm | 4pm – 8pm</p>
+                <p><strong>Sábado</strong>&ensp;10am – 2pm</p>
+                <p><strong>Domingo cerrado</strong></p>
+              </dd>
+            </div>
+            <div class="fila-dato border-b">
+              <dt>Contacto</dt>
+              <dd>
+                <a href="tel:+34613941396" class="hover:underline"
+                  >+34 613 941 396</a
+                ><br /><a
+                  href="mailto:tienda@bidadari.es"
+                  class="hover:underline"
+                  >tienda@bidadari.es</a
+                >
+              </dd>
+            </div>
+          </dl>
+
+          <div class="mt-7 flex flex-col gap-3 md:flex-row">
+            <a
+              href="tel:+34613941396"
+              class="boton bg-verde-oscuro text-verde-oliva hover:bg-tinta dark:bg-crema dark:text-verde-oscuro dark:hover:bg-verde-oliva"
+              >Llamar</a
+            >
+            <a
+              href="https://wa.me/34613941396"
+              target="_blank"
+              rel="noopener"
+              class="boton btn-borde"
+              >Escribir por WhatsApp</a
+            >
+            <a href="mailto:tienda@bidadari.es" class="boton btn-borde"
+              >Escribir un correo</a
+            >
+          </div>
+        </div>
+
+        <div class="mt-9 md:mt-11 lg:mt-0" data-aos="fade-left">
+          <iframe
+            src="https://maps.google.com/maps?q=40.4574408,-3.7847679&amp;hl=es&amp;z=17&amp;t=k&amp;output=embed"
+            title="Mapa con la ubicación del showroom de Bidadari en Aravaca"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="h-[300px] w-full rounded border-0 md:h-[380px] lg:h-[480px]"
+          ></iframe>
+          <a
+            href="https://www.google.com/maps/place/Av.+de+la+Galaxia,+21,+Moncloa+-+Aravaca,+28023+Madrid,+Espa%C3%B1a/@40.457441,-3.784768,704m/data=!3m1!1e3!4m6!3m5!1s0xd4186fd8d7f8147:0x672e66839ffb6fd4!8m2!3d40.4574408!4d-3.7847679!16s%2Fg%2F11d_6xpsdf?hl=es-ES&amp;entry=ttu&amp;g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener"
+            class="boton mt-4 w-full bg-verde-oscuro text-verde-oliva hover:bg-tinta md:w-auto dark:bg-crema dark:text-verde-oscuro dark:hover:bg-verde-oliva"
+            >Ver ruta en Google Maps</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="greca h-9 text-marron md:h-11 lg:h-[58px] dark:text-rosa-grisaceo/45"
+      role="presentation"
+    ></div>
+    <footer class="bg-crema px-6 pb-8 pt-10 md:px-12 lg:px-20 dark:bg-tinta">
+      <div
+        class="mx-auto max-w-[1280px] lg:flex lg:justify-between"
+        data-aos="fade-up"
+      >
+        <div class="lg:max-w-[320px]">
+          <a
+            href="index.html"
+            aria-label="Bidadari, inicio"
+            class="logo block aspect-[3/1] w-[150px] text-tinta dark:text-crema"
+          ></a>
+          <p
+            class="mt-3 text-[19px]/[26px] italic text-tinta/70 dark:text-crema/70"
+          >
+            Piezas únicas con historia del sudeste asiático.
+          </p>
+        </div>
+        <div
+          class="mt-9 grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:mt-0 lg:gap-x-[130px]"
+        >
+          <nav aria-label="Explorar">
+            <h2 class="titulo-col">Explorar</h2>
+            <ul class="lista-col">
+              <li><a href="#">Catálogo</a></li>
+              <li><a href="#">Experiencias</a></li>
+              <li><a href="#">Colaboradores</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Bidadari">
+            <h2 class="titulo-col">Bidadari</h2>
+            <ul class="lista-col">
+              <li><a href="#">Nosotros</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/Av.+de+la+Galaxia,+21,+Moncloa+-+Aravaca,+28023+Madrid,+Espa%C3%B1a/@40.457441,-3.784768,704m/data=!3m1!1e3!4m6!3m5!1s0xd4186fd8d7f8147:0x672e66839ffb6fd4!8m2!3d40.4574408!4d-3.7847679!16s%2Fg%2F11d_6xpsdf?hl=es-ES&amp;entry=ttu&amp;g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener"
+                  >Cómo llegar</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div>
+            <h2 class="titulo-col">Showroom</h2>
+            <ul class="lista-col">
+              <li>Av. de la Galaxia, 21</li>
+              <li>Aravaca, Madrid</li>
+              <li>
+                <a href="mailto:tienda@bidadari.es">tienda@bidadari.es</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mx-auto mt-10 flex max-w-[1280px] flex-col gap-2 border-t border-tinta/20 pt-5 font-titulo text-xs text-tinta/60 md:flex-row md:justify-between dark:border-crema/20 dark:text-crema/60"
+      >
+        <p>
+          Aviso legal &nbsp;·&nbsp; Política de privacidad &nbsp;·&nbsp;
+          Política de cookies
+        </p>
+        <p>© 2026 Bidadari</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

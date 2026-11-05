@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pieza · Bidadari</title>
+    <meta
+      name="description"
+      content="Ficha de una pieza única del catálogo de Bidadari."
+    />
+    <script>
+      try {
+        var t = localStorage.getItem("tema");
+        if (
+          t === "oscuro" ||
+          (!t && matchMedia("(prefers-color-scheme: dark)").matches)
+        )
+          document.documentElement.classList.add("dark");
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+      @theme {
+        --color-crema: #f3eee4;
+        --color-crema-oscuro: #e9e1d3;
+        --color-tinta: #2f2d1f;
+        --color-marron: #653a12;
+        --color-verde-oscuro: #49481c;
+        --color-verde-oliva: #c6bf86;
+        --color-rosa-grisaceo: #c8c1aa;
+        --color-hoja: #5e7a3a;
+        --color-pizarra: #3b4c4d;
+        --color-celeste: #c6d8d3;
+        --font-titulo: "Syne", sans-serif;
+        --font-texto: "EB Garamond", Georgia, serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-crema font-texto text-tinta antialiased dark:bg-tinta dark:text-crema"
+  >
+    <header
+      class="cabecera relative z-50 text-tinta dark:text-crema mx-auto flex h-[72px] w-full max-w-[1440px] items-center justify-between px-6 md:h-[88px] md:px-12 lg:h-[120px] lg:px-20"
+    >
+      <a
+        href="index.html"
+        aria-label="Bidadari, inicio"
+        class="logo block aspect-[3/1] w-28 md:w-[140px] lg:w-[150px]"
+      ></a>
+
+      <nav aria-label="Principal" class="hidden lg:block">
+        <ul class="flex gap-9 font-titulo text-[15px] font-medium">
+          <li>
+            <a href="catalogo.html" class="enlace-nav">Catálogo</a>
+          </li>
+          <li><a href="#" class="enlace-nav">Nosotros</a></li>
+          <li><a href="#" class="enlace-nav">Experiencias</a></li>
+          <li><a href="#" class="enlace-nav">Colaboradores</a></li>
+          <li><a href="index.html#contacto" class="enlace-nav">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-5 md:gap-7">
+        <button
+          type="button"
+          id="btn-tema"
+          class="grid h-6 w-6 place-items-center hover:opacity-70 focus-visible:outline-2 focus-visible:outline-tinta dark:focus-visible:outline-crema"
+          aria-label="Cambiar entre modo claro y oscuro"
+        >
+          <span
+            class="icono ico-luna h-6 w-6 dark:hidden"
+            aria-hidden="true"
+          ></span>
+          <span
+            class="icono ico-sol hidden h-6 w-6 dark:inline-block"
+            aria-hidden="true"
+          ></span>
+        </button>
+        <button
+          type="button"
+          id="btn-menu"
+          class="btn-menu grid h-6 w-6 place-items-center hover:opacity-70 focus-visible:outline-2 focus-visible:outline-tinta dark:focus-visible:outline-crema lg:hidden"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="menu-movil"
+        >
+          <span class="icono ico-hamburguesa h-6 w-6" aria-hidden="true"></span>
+          <svg
+            class="x-cerrar h-6 w-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <path d="M4 4l16 16M20 4 4 20" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div
+      id="menu-movil"
+      class="menu-movil fixed inset-0 z-40 flex-col bg-crema px-6 pt-24 text-tinta md:px-12 dark:bg-tinta dark:text-crema lg:hidden"
+      role="dialog"
+      aria-label="Menú"
+    >
+      <nav aria-label="Menú móvil">
+        <ul class="font-titulo text-[28px] font-medium">
+          <li class="border-b border-tinta/15 dark:border-crema/15">
+            <a href="catalogo.html" class="block py-5">Catálogo</a>
+          </li>
+          <li class="border-b border-tinta/15 dark:border-crema/15">
+            <a href="#" class="block py-5">Nosotros</a>
+          </li>
+          <li class="border-b border-tinta/15 dark:border-crema/15">
+            <a href="#" class="block py-5">Experiencias</a>
+          </li>
+          <li class="border-b border-tinta/15 dark:border-crema/15">
+            <a href="#" class="block py-5">Colaboradores</a>
+          </li>
+          <li class="border-b border-tinta/15 dark:border-crema/15">
+            <a href="index.html#contacto" class="block py-5">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main
+      class="mx-auto w-full max-w-[1440px] px-6 pb-16 pt-4 md:px-12 lg:px-20"
+    >
+      <a
+        href="catalogo.html"
+        class="inline-flex items-center gap-2 font-titulo text-[13px] hover:underline"
+      >
+        <span
+          class="icono ico-flecha h-3 w-4 rotate-180"
+          aria-hidden="true"
+        ></span>
+        Volver al catálogo
+      </a>
+
+      <article id="pieza" class="mt-6 lg:grid lg:grid-cols-2 lg:gap-16">
+        <div
+          class="hero-entra relative aspect-[5/4] overflow-hidden rounded bg-white lg:aspect-square"
+        >
+          <img
+            id="pieza-img"
+            src=""
+            alt=""
+            class="h-full w-full object-cover"
+            fetchpriority="high"
+          />
+        </div>
+
+        <div class="mt-8 lg:mt-0">
+          <p
+            id="pieza-agotado"
+            hidden
+            class="mb-3 inline-block rounded-full border border-current px-3 py-1 font-titulo text-[11px] uppercase tracking-wide"
+          >
+            Agotado
+          </p>
+          <h1
+            id="pieza-nombre"
+            class="font-titulo text-[32px]/[38px] font-medium tracking-tight md:text-[44px]/[52px]"
+          ></h1>
+          <p id="pieza-precio" class="mt-2 font-titulo text-2xl"></p>
+          <p
+            id="pieza-desc"
+            class="mt-5 max-w-[560px] text-[19px]/[27px] md:text-[22px]/[31px]"
+          ></p>
+
+          <dl class="mt-8 text-xl/[27px]">
+            <div class="fila-dato">
+              <dt>Categoría</dt>
+              <dd id="pieza-categoria"></dd>
+            </div>
+            <div class="fila-dato">
+              <dt>Edad</dt>
+              <dd id="pieza-edad"></dd>
+            </div>
+            <div class="fila-dato">
+              <dt>Medidas</dt>
+              <dd id="pieza-medidas"></dd>
+            </div>
+            <div class="fila-dato border-b">
+              <dt>Material</dt>
+              <dd id="pieza-material"></dd>
+            </div>
+          </dl>
+
+          <h2
+            class="mt-8 font-titulo text-[13px] font-medium uppercase tracking-[0.14em]"
+          >
+            Su historia
+          </h2>
+          <p
+            id="pieza-historia"
+            class="mt-3 max-w-[560px] text-[19px]/[27px]"
+          ></p>
+
+          <div id="pieza-cta" class="mt-8">
+            <p class="max-w-[560px] text-lg/[26px]">
+              No vendemos online: las piezas se compran en nuestro showroom de
+              Aravaca.
+            </p>
+            <a
+              href="index.html#contacto"
+              class="boton mt-4 w-full bg-verde-oscuro text-verde-oliva hover:bg-tinta md:w-auto dark:bg-crema dark:text-verde-oscuro dark:hover:bg-verde-oliva"
+            >
+              Ven a verla
+              <span class="icono ico-flecha h-4 w-4" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <section id="no-encontrada" hidden class="mt-10">
+        <h1 class="font-titulo text-[32px]/[38px] font-medium">
+          No encontramos esta pieza
+        </h1>
+        <p class="mt-4 text-xl">Puede que ya no esté en el catálogo.</p>
+        <a href="catalogo.html" class="boton btn-borde mt-6">Ver el catálogo</a>
+      </section>
+    </main>
+
+    <div
+      class="greca h-9 text-marron md:h-11 lg:h-[58px] dark:text-rosa-grisaceo/45"
+      role="presentation"
+    ></div>
+    <footer class="bg-crema px-6 pb-8 pt-10 md:px-12 lg:px-20 dark:bg-tinta">
+      <div
+        class="mx-auto max-w-[1280px] lg:flex lg:justify-between"
+        data-aos="fade-up"
+      >
+        <div class="lg:max-w-[320px]">
+          <a
+            href="index.html"
+            aria-label="Bidadari, inicio"
+            class="logo block aspect-[3/1] w-[150px] text-tinta dark:text-crema"
+          ></a>
+          <p
+            class="mt-3 text-[19px]/[26px] italic text-tinta/70 dark:text-crema/70"
+          >
+            Piezas únicas con historia del sudeste asiático.
+          </p>
+        </div>
+        <div
+          class="mt-9 grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:mt-0 lg:gap-x-[130px]"
+        >
+          <nav aria-label="Explorar">
+            <h2 class="titulo-col">Explorar</h2>
+            <ul class="lista-col">
+              <li><a href="catalogo.html">Catálogo</a></li>
+              <li><a href="#">Experiencias</a></li>
+              <li><a href="#">Colaboradores</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Bidadari">
+            <h2 class="titulo-col">Bidadari</h2>
+            <ul class="lista-col">
+              <li><a href="#">Nosotros</a></li>
+              <li><a href="index.html#contacto">Contacto</a></li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/Av.+de+la+Galaxia,+21,+Moncloa+-+Aravaca,+28023+Madrid,+Espa%C3%B1a/@40.457441,-3.784768,704m/data=!3m1!1e3!4m6!3m5!1s0xd4186fd8d7f8147:0x672e66839ffb6fd4!8m2!3d40.4574408!4d-3.7847679!16s%2Fg%2F11d_6xpsdf?hl=es-ES&amp;entry=ttu&amp;g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener"
+                  >Cómo llegar</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div>
+            <h2 class="titulo-col">Showroom</h2>
+            <ul class="lista-col">
+              <li>Av. de la Galaxia, 21</li>
+              <li>Aravaca, Madrid</li>
+              <li>
+                <a href="mailto:tienda@bidadari.es">tienda@bidadari.es</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mx-auto mt-10 flex max-w-[1280px] flex-col gap-2 border-t border-tinta/20 pt-5 font-titulo text-xs text-tinta/60 md:flex-row md:justify-between dark:border-crema/20 dark:text-crema/60"
+      >
+        <p>
+          Aviso legal &nbsp;·&nbsp; Política de privacidad &nbsp;·&nbsp;
+          Política de cookies
+        </p>
+        <p>© 2026 Bidadari</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/pieza.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

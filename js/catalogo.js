@@ -12,6 +12,7 @@
   const tabTodos = document.getElementById("tab-todos");
   const tabNovedades = document.getElementById("tab-novedades");
   const tabFavoritos = document.getElementById("tab-favoritos");
+  const tituloSeccion = document.getElementById("titulo-seccion");
   let vistaActual = "todos"; // "todos" | "novedades" | "favoritos"
 
   const iconoEstrellaVacia = `<svg viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path d="M12 3.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 17l-5.4 3 1.2-6L3.3 9.8l6.1-.7z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>`;
@@ -108,6 +109,12 @@
   function cambiarPestana(nuevaVista) {
     vistaActual = nuevaVista;
 
+    // Mostrar u ocultar el título de "Recién llegadas al showroom" solo en novedades
+    if (tituloSeccion) {
+      tituloSeccion.style.display =
+        vistaActual === "novedades" ? "block" : "none";
+    }
+
     [tabTodos, tabNovedades, tabFavoritos].forEach((tab) => {
       tab.classList.remove(
         "underline",
@@ -166,5 +173,6 @@
   });
   escritorio.addEventListener("change", () => abrirPanel(false));
 
-  filtrar();
+  // Inicializar estado por defecto asegurando que el título esté oculto al arrancar en "Todos los productos"
+  cambiarPestana("todos");
 })();

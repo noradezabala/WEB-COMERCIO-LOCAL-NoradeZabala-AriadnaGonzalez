@@ -252,12 +252,12 @@
   background: transparent;
 }
 
-/* :where(.dark) ::-webkit-scrollbar-track {
-    background: var(--color-tinta);
-  } */
+:where(.dark) ::-webkit-scrollbar-track {
+  background: var(--color-tinta);
+}
 
 ::-webkit-scrollbar-thumb {
-  background: red;
+  background: var(--color-tinta);
   border-radius: 4px;
 }
 

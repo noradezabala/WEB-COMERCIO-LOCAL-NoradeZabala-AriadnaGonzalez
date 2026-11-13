@@ -30,6 +30,7 @@ const PRODUCTOS = [
     categoria: "decoracion",
     edad: "actual",
     agotado: false,
+    novedad: true, // Marcado como novedad
     ...TEXTO_DEMO,
     descripcion: "Busto decorativo tallado a mano de origen tailandés.",
     historia:
@@ -45,11 +46,12 @@ const PRODUCTOS = [
     categoria: "decoracion",
     edad: "antique",
     agotado: false,
+    novedad: true, // Marcado como novedad
     ...TEXTO_DEMO,
     descripcion: "Figura decorativa elaborada en piedra blanca.",
     historia:
       "Esta pieza nace en un taller de creación contemporánea especializado en el trabajo de la piedra. Su elaboración parte de la selección de bloques de piedra natural, trabajados mediante técnicas artesanales hasta conseguir su forma definitiva.",
-    medidas: "	10 × 30 × 45 cm",
+    medidas: "  10 × 30 × 45 cm",
     material: "Piedra blanca",
   },
   {
@@ -60,11 +62,12 @@ const PRODUCTOS = [
     categoria: "baules",
     edad: "vintage",
     agotado: true,
+    novedad: false,
     ...TEXTO_DEMO,
     descripcion: "Baúl blanco lacado y pintado a mano .",
     historia:
       "Inspirado en los antiguos baúles de la provincia china de Shanxi, este mueble toma como referencia las piezas tradicionales que durante generaciones sirvieron para guardar ajuar, documentos y objetos personales en los hogares chinos.",
-    medidas: "	80 × 43 × 52 cm",
+    medidas: "  80 × 43 × 52 cm",
     material: "Madera de olmo",
   },
   {
@@ -75,11 +78,12 @@ const PRODUCTOS = [
     categoria: "decoracion",
     edad: "actual",
     agotado: false,
+    novedad: true, // Marcado como novedad
     ...TEXTO_DEMO,
     descripcion: "Jarrón decorativo de madera con acabados.",
     historia:
       "Esta pieza fue elaborada en un taller de artesanía contemporánea, donde la madera se trabaja y transforma siguiendo técnicas tradicionales de carpintería. Su creación parte de la selección de madera natural, que posteriormente se talla y se trabaja hasta obtener su forma definitiva.",
-    medidas: "	72 × 20 × 88 cm",
+    medidas: "  72 × 20 × 88 cm",
     material: "Madera",
   },
   {
@@ -90,11 +94,12 @@ const PRODUCTOS = [
     categoria: "iluminacion",
     edad: "antique",
     agotado: true,
+    novedad: false,
     ...TEXTO_DEMO,
     descripcion: "Conjunto decorativo elaborado en madera de teka.",
     historia:
       " Estas piezas tienen su origen en los talleres artesanales de la isla de Java, en Indonesia, donde la madera de teca ha sido tradicionalmente apreciada por su resistencia y durabilidad. Su diseño toma como referencia los antiguos soportes de madera utilizados en hogares y espacios ceremoniales para sostener velas y pequeñas fuentes de luz. ",
-    medidas: "		43 × 45 × 20 cm",
+    medidas: "    43 × 45 × 20 cm",
     material: "Madera de teka",
   },
   {
@@ -105,11 +110,12 @@ const PRODUCTOS = [
     categoria: "mesas",
     edad: "vintage",
     agotado: false,
+    novedad: false,
     ...TEXTO_DEMO,
     descripcion: "Mesa china Auxiliar. Pedestal en su acabado original.",
     historia:
       "Este pedestal tiene su origen en el Tíbet, donde formó parte del mobiliario de una antigua residencia vinculada a la vida tradicional de la región. Durante el siglo XIX, este tipo de mesas auxiliares se utilizaban para sostener objetos cotidianos, piezas ceremoniales y elementos decorativos en los hogares.",
-    medidas: "	45 × 45 × 83 cm",
+    medidas: "  45 × 45 × 83 cm",
     material: "Madera de ciprés",
   },
   {
@@ -120,11 +126,12 @@ const PRODUCTOS = [
     categoria: "muebles",
     edad: "vintage",
     agotado: false,
+    novedad: false,
     ...TEXTO_DEMO,
     descripcion: "Mesa china Auxiliar. Pedestal en su acabado original.",
     historia:
       "Inspirado en el mobiliario tradicional de la provincia china de Shanxi, este aparador recupera la estética de los antiguos muebles de almacenamiento que formaban parte de la vida cotidiana de los hogares chinos.",
-    medidas: "	138 × 40 × 88cm",
+    medidas: "  138 × 40 × 88cm",
     material: "Madera de olmo",
   },
   {
@@ -135,11 +142,12 @@ const PRODUCTOS = [
     categoria: "sillas",
     edad: "antique",
     agotado: false,
+    novedad: false,
     ...TEXTO_DEMO,
     descripcion: "Taburete antiguo elaborados en madera de olmo",
     historia:
       "Estos taburetes proceden de Tianjin, una ciudad portuaria del norte de China que durante las primeras décadas del siglo XX vivió una intensa actividad comercial y cultural. Fueron elaborados alrededor de 1920, durante la época republicana, un periodo de transición en el que el mobiliario tradicional chino comenzó a convivir con nuevas influencias estéticas. ",
-    medidas: "	28 x 15 x 28cm",
+    medidas: "  28 x 15 x 28cm",
     material: "Madera de olmo",
   },
   {
@@ -150,11 +158,12 @@ const PRODUCTOS = [
     categoria: "muebles",
     edad: "actual",
     agotado: false,
+    novedad: false,
     ...TEXTO_DEMO,
     descripcion: "Armario restaurado y pintado en blanco con celosía.",
     historia:
       "Este armario tiene su origen en Tianjin, una ciudad portuaria del norte de China que a comienzos del siglo XX se convirtió en un importante punto de encuentro entre las tradiciones orientales y las influencias occidentales.",
-    medidas: "		120 × 47 × 160 cm",
+    medidas: "    120 × 47 × 160 cm",
     material: "Madera de pino",
   },
   {
@@ -165,11 +174,12 @@ const PRODUCTOS = [
     categoria: "decoracion",
     edad: "vintage",
     agotado: false,
+    novedad: false,
     ...TEXTO_DEMO,
     descripcion: "Cesta de mimbre tejida a mano.",
     historia:
       "Esta cesta procede de la provincia de Fujian, en el sureste de China, una región con una larga tradición de trabajos artesanales con fibras vegetales. Fue elaborada alrededor de 1930 mediante técnicas de tejido manual, utilizando ratán para crear una estructura resistente y ligera.",
-    medidas: "		30 × 30 × 60 160 cm",
+    medidas: "    30 × 30 × 60 160 cm",
     material: "Ratán",
   },
   {
@@ -180,12 +190,13 @@ const PRODUCTOS = [
     categoria: "puertas",
     edad: "antique",
     agotado: false,
+    novedad: false,
     ...TEXTO_DEMO,
     descripcion:
       "Puertas chinas Celosía. Barnizadas y elaboradamente talladas a mano.",
     historia:
       "Estas puertas proceden de la provincia de Yunnan, al suroeste de China, donde formaron parte de una antigua construcción residencial durante la dinastía Qing. Talladas alrededor de 1800 en madera de zelkova, sus paneles de celosía fueron decorados con aves que ocupaban un lugar especial en la simbología tradicional china. ",
-    medidas: "			53 × 7 × 230 cm",
+    medidas: "      53 × 7 × 230 cm",
     material: "Madera de Zelková",
   },
 ];

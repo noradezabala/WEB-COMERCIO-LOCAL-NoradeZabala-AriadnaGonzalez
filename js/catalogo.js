@@ -12,7 +12,7 @@
   const tabNovedades = document.getElementById("tab-novedades");
   const tabFavoritos = document.getElementById("tab-favoritos");
   const tituloSeccion = document.getElementById("titulo-seccion");
-  let vistaActual = "todos"; // "todos" | "novedades" | "favoritos"
+  let vistaActual = "todos";
 
   const iconoEstrellaVacia = `<svg viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path d="M12 3.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 17l-5.4 3 1.2-6L3.3 9.8l6.1-.7z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>`;
   const iconoEstrellaRellena = `<svg viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path d="M12 3.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 17l-5.4 3 1.2-6L3.3 9.8l6.1-.7z" fill="currentColor" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>`;

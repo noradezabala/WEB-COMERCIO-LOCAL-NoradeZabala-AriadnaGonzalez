@@ -1,4 +1,3 @@
-// Catálogo: pinta las tarjetas desde PRODUCTOS (productos.js) y aplica las pestañas y filtros.
 (() => {
   const lista = document.getElementById("lista-productos");
   const contenedor = document.getElementById("filtros");
@@ -46,7 +45,6 @@
   lista.innerHTML = PRODUCTOS.map(crearTarjeta).join("");
   const tarjetas = [...lista.children];
 
-  // Interactividad visual de la estrella y actualización al marcar favoritos
   lista.addEventListener("click", (e) => {
     const btn = e.target.closest('button[data-accion="fav"]');
     if (!btn) return;
@@ -109,7 +107,6 @@
   function cambiarPestana(nuevaVista) {
     vistaActual = nuevaVista;
 
-    // Mostrar u ocultar el título de "Recién llegadas al showroom" solo en novedades
     if (tituloSeccion) {
       tituloSeccion.style.display =
         vistaActual === "novedades" ? "block" : "none";
@@ -154,7 +151,6 @@
     }),
   );
 
-  // ---- Desplegable de filtros (solo móvil y tablet) ----
   function abrirPanel(abrir) {
     panel.classList.toggle("hidden", !abrir);
     fila.dataset.abierto = String(abrir);
@@ -173,6 +169,5 @@
   });
   escritorio.addEventListener("change", () => abrirPanel(false));
 
-  // Inicializar estado por defecto asegurando que el título esté oculto al arrancar en "Todos los productos"
   cambiarPestana("todos");
 })();
